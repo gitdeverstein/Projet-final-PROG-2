@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head th:replace="index :: homePage">
+    <title>Document</title>
+</head>
+
+<body>
+<nav th:replace="index :: navbar" ></nav>
+
+<h1>Add book</h1>
+
+<form th:action="@{saveBook}" th:object="${book}" method="post" class="mx-5">
+    <div class="mb-3">
+        <label class="form-label">Book title</label>
+        <input type="text" class="form-control" name="title" th:value="${book.title}">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Author</label>
+        <input type="text" class="form-control" name="author" th:value="${book.author}">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Category</label>
+        <input type="text" class="form-control" name="category" th:value="${book.category}">
+    </div>
+    <div class="form-floating">
+        <textarea class="form-control" id="floatingTextarea2" style="height: 100px" name="summary" th:value="${book.summary}"></textarea>
+        <label for="floatingTextarea2">Synopsis</label>
+    </div>
+    <div class="d-grid gap-2 col-6 mx-auto">
+        <button class="btn btn-primary" type="submit">Add</button>
+    </div>
+</form>
+</body>
+</html>

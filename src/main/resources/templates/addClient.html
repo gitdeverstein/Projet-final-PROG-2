@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head th:replace="index :: homePage"><title>Document</title></head>
+<body>
+<nav th:replace="index :: navbar" ></nav>
+
+<h1>Add client</h1>
+
+<form th:action="@{saveClient}" th:object="${client}" method="post" class="mx-5">
+    <div class="row">
+        <div class="col">
+            <input type="text" class="form-control" placeholder="First name" name="firstName"
+                   aria-label="First name" th:value="${client.firstName}">
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" placeholder="Last name" name="lastName"
+                   aria-label="Last name" th:value="${client.lastName}">
+        </div>
+    </div>
+    <div class="d-grid gap-2 col-6 mx-auto">
+        <button class="btn btn-primary" type="submit">Add</button>
+    </div>
+</form>
+
+</body>
+</html>

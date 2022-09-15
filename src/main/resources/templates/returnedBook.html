@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="index :: homePage">
+    <title>Document</title>
+</head>
+<body>
+<nav th:replace="index :: navbar"></nav>
+
+<h1>All returned books</h1>
+<ul class="me-auto mb-2 mb-lg-0">
+    <li class="nav-item">
+        <a class="nav-link" th:href="@{/addReturnedBook}">Add returned book</a>
+    </li>
+</ul>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">id</th>
+        <th scope="col">Book title</th>
+        <th scope="col">First name</th>
+        <th scope="col">Last name</th>
+        <th scope="col">Returned date</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="returnedBook:${listReturnedBook}">
+        <td th:text="${returnedBook.id}"></td>
+        <td th:text="${returnedBook.title}"></td>
+        <td th:text="${returnedBook.firstName}"></td>
+        <td th:text="${returnedBook.lastName}"></td>
+        <td th:text="${returnedBook.date}"></td>
+    </tr>
+
+    </tbody>
+</table>
+
+</body>
+</html>

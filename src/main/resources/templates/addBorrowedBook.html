@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="index :: homePage">
+    <title>Document</title>
+</head>
+<body>
+<nav th:replace="index :: navbar"></nav>
+
+<h1>Add Borrowed book</h1>
+
+<form th:action="@{saveBorrowedBook}" th:object="${borrowedBook}" method="post" class="mx-5">
+    <div class="mb-3">
+        <label class="form-label">Book title</label>
+        <input type="text" class="form-control" name="title" th:value="${borrowedBook.title}">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">First name</label>
+        <input type="text" class="form-control" name="firstName" th:value="${borrowedBook.firstName}">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Last name</label>
+        <input type="text" class="form-control" name="lastName" th:value="${borrowedBook.lastName}">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Borrowed date</label>
+        <input type="text" class="form-control" name="date" th:value="${borrowedBook.date}">
+    </div>
+    <div class="d-grid gap-2 col-6 mx-auto">
+        <button class="btn btn-primary" type="submit">Add</button>
+    </div>
+</form>
+
+</body>
+</html>
