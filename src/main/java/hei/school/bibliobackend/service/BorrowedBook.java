@@ -21,7 +21,7 @@ public class BorrowedBook {
     public hei.school.bibliobackend.model.BorrowedBook addBorrowedBook(hei.school.bibliobackend.model.BorrowedBook borrowedBook){
         return borrowedBookRepository.save(borrowedBook);
     }
-    public void deleteBook(Integer idBorrowedBook){
+    public void deleteBorrowedBook(Integer idBorrowedBook){
         borrowedBookRepository.deleteById(idBorrowedBook);
     }
 }
